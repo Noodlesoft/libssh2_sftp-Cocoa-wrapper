@@ -139,7 +139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# Include default paths for MacPorts & HomeBrew.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af openssl \"${OBJROOT}/openssl-x86_64\"\n\n# Configure & build\ncd \"${OBJROOT}/openssl-x86_64\"\nmake clean\nexport CC=\"clang -isysroot ${SDKROOT} -g -w -mmacosx-version-min=10.13    \"\n./Configure --prefix=\"@loader_path/../Frameworks\"  threads shared zlib-dynamic  no-krb5 no-jpake no-store  darwin64-x86_64-cc\nmake build_libs\n";
+			shellScript = "# Include default paths for MacPorts & HomeBrew.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af openssl \"${OBJROOT}/openssl-x86_64\"\n\n# Configure & build\ncd \"${OBJROOT}/openssl-x86_64\"\nmake clean\nexport CC=\"clang -isysroot ${SDKROOT} -g -w -mmacosx-version-min=10.9    \"\n./Configure --prefix=\"@loader_path/../Frameworks\"  threads shared zlib-dynamic  no-krb5 no-jpake no-store  darwin64-x86_64-cc\nmake build_libs\n";
 			showEnvVarsInLog = 0;
 		};
 		800802E21666FB43004D39F5 /* Run Script - Rename + Install Name */ = {
@@ -247,7 +247,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -257,7 +257,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;

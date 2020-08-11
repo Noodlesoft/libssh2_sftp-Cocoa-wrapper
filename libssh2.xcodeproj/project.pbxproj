@@ -169,7 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# glibtoolize (and maybe other tools) are not supplied with OS X.\n# Add default macports & homebrew paths in attempt to find them.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af libssh2 \"${OBJROOT}/libssh2-x86_64\"\ncp -Rf openssl-build-include/ \"${OBJROOT}/openssl-build-include/\"\n\n# Buildconf\ncd \"${OBJROOT}/libssh2-x86_64\"\necho \"Please ignore any messages about \\\"No rule to make target distclean.\\\" That just means the build dir is already clean.\"\nmake distclean\n./buildconf\n\n# Configure\n./configure \\\nCC=\"clang\" \\\nCFLAGS=\"-isysroot ${SDKROOT} -I${OBJROOT}/openssl-build-include -arch x86_64 -g -w -mmacosx-version-min=10.6\" \\\nLDFLAGS=\"-L${SRCROOT}\" \\\n--host=x86_64-apple-darwin10 \\\n--with-sysroot=${SDKROOT} \\\n--with-openssl \\\n--with-libz \\\n--enable-shared \\\n--disable-static \\\n--disable-examples-build\n\n# Make\nmake\n";
+			shellScript = "# glibtoolize (and maybe other tools) are not supplied with OS X.\n# Add default macports & homebrew paths in attempt to find them.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af libssh2 \"${OBJROOT}/libssh2-x86_64\"\ncp -Rf openssl-build-include/ \"${OBJROOT}/openssl-build-include/\"\n\n# Buildconf\ncd \"${OBJROOT}/libssh2-x86_64\"\necho \"Please ignore any messages about \\\"No rule to make target distclean.\\\" That just means the build dir is already clean.\"\nmake distclean\n./buildconf\n\n# Configure\n./configure \\\nCC=\"clang\" \\\nCFLAGS=\"-isysroot ${SDKROOT} -I${OBJROOT}/openssl-build-include -arch x86_64 -g -w -mmacosx-version-min=10.9\" \\\nLDFLAGS=\"-L${SRCROOT}\" \\\n--host=x86_64-apple-darwin10 \\\n--with-sysroot=${SDKROOT} \\\n--with-openssl \\\n--with-libz \\\n--enable-shared \\\n--disable-static \\\n--disable-examples-build\n\n# Make\nmake\n";
 			showEnvVarsInLog = 0;
 		};
 		8008030916685196004D39F5 /* Run Script - Rename + Install Name */ = {
@@ -199,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# glibtoolize (and maybe other tools) are not supplied with OS X.\n# Add default macports & homebrew paths in attempt to find them.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af libssh2 \"${OBJROOT}/libssh2-arm64\"\ncp -Rf openssl-build-include/ \"${OBJROOT}/openssl-build-include/\"\n\n# Buildconf\ncd \"${OBJROOT}/libssh2-arm64\"\necho \"Please ignore any messages about \\\"No rule to make target distclean.\\\" That just means the build dir is already clean.\"\nmake distclean\n./buildconf\n\n# Configure\n./configure \\\nCC=\"clang\" \\\nCFLAGS=\"-isysroot ${SDKROOT} -I${OBJROOT}/openssl-build-include -arch arm64 -g -w -mmacosx-version-min=10.13\" \\\nLDFLAGS=\"-L${SRCROOT}\" \\\n--host=arm-apple-darwin10 \\\n--with-sysroot=${SDKROOT} \\\n--with-openssl \\\n--with-libz \\\n--enable-shared \\\n--disable-static \\\n--disable-examples-build\n\n# Make\nmake\n";
+			shellScript = "# glibtoolize (and maybe other tools) are not supplied with OS X.\n# Add default macports & homebrew paths in attempt to find them.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af libssh2 \"${OBJROOT}/libssh2-arm64\"\ncp -Rf openssl-build-include/ \"${OBJROOT}/openssl-build-include/\"\n\n# Buildconf\ncd \"${OBJROOT}/libssh2-arm64\"\necho \"Please ignore any messages about \\\"No rule to make target distclean.\\\" That just means the build dir is already clean.\"\nmake distclean\n./buildconf\n\n# Configure\n./configure \\\nCC=\"clang\" \\\nCFLAGS=\"-isysroot ${SDKROOT} -I${OBJROOT}/openssl-build-include -arch arm64 -g -w -mmacosx-version-min=10.9\" \\\nLDFLAGS=\"-L${SRCROOT}\" \\\n--host=arm-apple-darwin10 \\\n--with-sysroot=${SDKROOT} \\\n--with-openssl \\\n--with-libz \\\n--enable-shared \\\n--disable-static \\\n--disable-examples-build\n\n# Make\nmake\n";
 			showEnvVarsInLog = 0;
 		};
 		EE4E83F924C1186100324D23 /* Run Script - Rename + Install Name */ = {
@@ -243,7 +243,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -253,7 +253,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
