@@ -4,4 +4,4 @@
 [submodule "openssl"]
 	branch = noodlesoft
 	path = openssl
-	url = git@github.com:Noodlesoft/openssl.git
+	url = https://github.com/Noodlesoft/openssl.git
