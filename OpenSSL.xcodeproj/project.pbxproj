@@ -84,14 +84,14 @@
 
 /* Begin PBXFileReference section */
 		800802CA1665A705004D39F5 /* openssl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = openssl; sourceTree = "<group>"; };
-		800802E3166718C0004D39F5 /* openssl-README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "openssl-README.txt"; sourceTree = "<group>"; };
+		EE5925F1268A963B005719CA /* openssl-README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "openssl-README.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		0867D691FE84028FC02AAC07 /* CURLHandle */ = {
 			isa = PBXGroup;
 			children = (
-				800802E3166718C0004D39F5 /* openssl-README.txt */,
+				EE5925F1268A963B005719CA /* openssl-README.md */,
 				800802CA1665A705004D39F5 /* openssl */,
 			);
 			name = CURLHandle;
