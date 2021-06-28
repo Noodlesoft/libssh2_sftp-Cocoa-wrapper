@@ -1,6 +1,6 @@
 [submodule "libssh2"]
 	path = libssh2
-	url = https://github.com/karelia/libssh2.git
+	url = https://github.com/libssh2/libssh2
 [submodule "openssl"]
 	branch = noodlesoft
 	path = openssl
