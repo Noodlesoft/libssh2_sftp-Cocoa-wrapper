@@ -1,6 +1,7 @@
 # OpenSSL for Hazel
 
-OpenSSL is a git submodule checked out in the `openssl` directory. Currently it's still a fork of Karelia's OpenSSL GitHub repository. However changes from newer OpenSSL tags have been merged in to get newer functionality (like newer key formats).
+OpenSSL is a git submodule checked out in the `openssl` directory. OpenSSL is a git submodule checked out in the `openssl` directory. It's a fork of the main
+OpenSSL repo. The older fork, based on Karelia's fork of OpenSSL, has been deleted.
 
 As of June 2021 the currently merged tag is `OpenSSL_1_1_1k`. See `openssl/README` for the latest version info.
 
