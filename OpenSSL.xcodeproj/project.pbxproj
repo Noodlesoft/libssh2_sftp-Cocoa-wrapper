@@ -84,14 +84,14 @@
 
 /* Begin PBXFileReference section */
 		800802CA1665A705004D39F5 /* openssl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = openssl; sourceTree = "<group>"; };
-		800802E3166718C0004D39F5 /* openssl-README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "openssl-README.txt"; sourceTree = "<group>"; };
+		EE5925F1268A963B005719CA /* openssl-README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "openssl-README.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		0867D691FE84028FC02AAC07 /* CURLHandle */ = {
 			isa = PBXGroup;
 			children = (
-				800802E3166718C0004D39F5 /* openssl-README.txt */,
+				EE5925F1268A963B005719CA /* openssl-README.md */,
 				800802CA1665A705004D39F5 /* openssl */,
 			);
 			name = CURLHandle;
@@ -139,7 +139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# Include default paths for MacPorts & HomeBrew.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af openssl \"${OBJROOT}/openssl-x86_64\"\n\n# Configure & build\ncd \"${OBJROOT}/openssl-x86_64\"\nmake clean\nexport CC=\"clang -isysroot ${SDKROOT} -g -w -mmacosx-version-min=10.9    \"\n./Configure --prefix=\"@loader_path/../Frameworks\"  threads shared zlib-dynamic  no-krb5 no-jpake no-store  darwin64-x86_64-cc\nmake build_libs\n";
+			shellScript = "# Include default paths for MacPorts & HomeBrew.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af openssl \"${OBJROOT}/openssl-x86_64\"\n\n# Configure & build\ncd \"${OBJROOT}/openssl-x86_64\"\nmake clean\nexport CC=\"clang -isysroot ${SDKROOT} -g -w -mmacosx-version-min=10.9    \"\n./Configure --prefix=\"@loader_path/../Frameworks\"  threads shared zlib-dynamic darwin64-x86_64-cc\n# no-krb5 no-jpake no-store \nmake build_libs\n";
 			showEnvVarsInLog = 0;
 		};
 		800802E21666FB43004D39F5 /* Run Script - Rename + Install Name */ = {
@@ -203,7 +203,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# Include default paths for MacPorts & HomeBrew.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af openssl \"${OBJROOT}/openssl-arm64\"\n\n# Configure & build\ncd \"${OBJROOT}/openssl-arm64\"\nmake clean\n#export CC=\"clang -isysroot ${SDKROOT} -g -w -mmacosx-version-min=11.0    \"\n./Configure --prefix=\"@loader_path/../Frameworks\"  threads shared zlib-dynamic  no-krb5 no-jpake no-store no-asm  darwin64-arm64-cc\nmake build_libs\n";
+			shellScript = "# Include default paths for MacPorts & HomeBrew.\nexport PATH=${PATH}:/opt/local/bin:/usr/local/bin\n\n# Copy source to a new location to build.\ncd \"${SRCROOT}\"\nmkdir -p \"${OBJROOT}\"\ncp -af openssl \"${OBJROOT}/openssl-arm64\"\n\n# Configure & build\ncd \"${OBJROOT}/openssl-arm64\"\nmake clean\n#export CC=\"clang -isysroot ${SDKROOT} -g -w -mmacosx-version-min=11.0    \"\n./Configure --prefix=\"@loader_path/../Frameworks\"  threads shared zlib-dynamic  no-asm  darwin64-arm64-cc\n# no-krb5 no-jpake no-store \nmake build_libs\n";
 			showEnvVarsInLog = 0;
 		};
 		EE4E83F324C10E6600324D23 /* Run Script - Rename + Install Name */ = {

@@ -1,3 +1,25 @@
+# OpenSSL for Hazel
+
+OpenSSL is a git submodule checked out in the `openssl` directory. OpenSSL is a git submodule checked out in the `openssl` directory. It's a fork of the main
+OpenSSL repo. The older fork, based on Karelia's fork of OpenSSL, has been deleted.
+
+As of June 2021 the currently merged tag is `OpenSSL_1_1_1k`. See `openssl/README` for the latest version info.
+
+The only difference between Noodlesoft's OpenSSL and the core OpenSSL tag is in the `Configure` script. OpenSSL requires an absolute path for the `--prefix` argument while Hazel need to use `--prefix="@loader_path/../Frameworks"` in order to embed OpenSSL in a framework that's part of an app. Removing the absolute path check breaks some OpenSSL Makefile targets, but Hazel doesn't use those targets. See https://github.com/openssl/openssl/issues/15856 for some discussion of this.
+
+Build OpenSSL using `OpenSSL.xcodeproj` using the `openssl` target. No special steps are needed. Xcode build scripts handle building OpenSSL, and the build products are `libcrypto.dylib` and `libssl.dylib`, copied to this directory. It's a lipo'd fat binsry with x86_64 and arm64 code. The `openssl` target depends on other targets that clean and then build for both architectures.
+
+To update to a newer version of OpenSSL:
+
+    cd openssl
+    git remote add upstream https://github.com/openssl/openssl.git
+    git fetch upstream
+
+Then merge the desired commit or tag into the `noodlesoft` branch using the Git tool of your choice.
+
+
+## Older notes from Karelia builds:
+
 How to build openssl for Sandvox:
 1. Update the source to a new version/tag if desired.
 2. Select the target "openssl" in the Scheme popup.
